@@ -11,7 +11,7 @@ app.use(express.json())
 const postsRoutes = require('./routes/api/posts')
 
 //Connect to MOngo db
-mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://meet:meet@meet.soyef.mongodb.net/canblog?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
     .then(() => {
         console.log('MongoDB Connected');
     })
@@ -19,5 +19,5 @@ mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlPar
 //use Routes
 app.use('/api/posts', postsRoutes);
 
-const PORT = process.env.PORT || 5000
+const PORT = 5000
 app.listen(PORT, () => { console.log(`server at ${PORT}`); })
