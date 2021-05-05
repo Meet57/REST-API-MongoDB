@@ -18,6 +18,9 @@ mongoose.connect('mongodb+srv://meet:meet@meet.soyef.mongodb.net/canblog?retryWr
 
 //use Routes
 app.use('/api/posts', postsRoutes);
+app.get('/',(req, res) => {
+    res.send('Home').status(200)
+})
 
 const PORT = 5000
 app.listen(PORT, () => { console.log(`server at ${PORT}`); })
