@@ -22,5 +22,5 @@ app.get('/',(req, res) => {
     res.send('Home').status(200)
 })
 
-const PORT = 3000
+const PORT = process.env.YOUR_PORT || process.env.PORT || 80
 app.listen(PORT, () => { console.log(`server at ${PORT}`); })
