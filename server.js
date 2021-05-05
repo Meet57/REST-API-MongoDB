@@ -11,7 +11,7 @@ app.use(express.json())
 const postsRoutes = require('./routes/api/posts')
 
 //Connect to MOngo db
-mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log('MongoDB Connected');
     })
