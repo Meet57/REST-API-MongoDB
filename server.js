@@ -11,7 +11,7 @@ app.use(express.json())
 const postsRoutes = require('./routes/api/posts')
 
 //Connect to MOngo db
-mongoose.connect('mongodb+srv://meet:meet@meet.soyef.mongodb.net/canblog?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://meet:meet@meet.soyef.mongodb.net/canblog?retryWrites=true&w=majority')
     .then(() => {
         console.log('MongoDB Connected');
     })
